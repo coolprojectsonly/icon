@@ -5,7 +5,26 @@ import { useDispatch, useSelector } from "react-redux";
 import { getIcon } from "./action";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faLinkedIn,
+  faSnapchat,
+  faPinterest,
+  faTumblr,
+  faReddit,
+  faVimeo,
+  faFlickr,
+  faGooglePlus,
+  faSkype,
+  faTelegram,
+  faSlack,
+  faDiscord,
+  faTwitch,
+  faSoundCloud,
+  faSpotify,
+} from "@fortawesome/free-brands-svg-icons";
 
 import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons";
 
@@ -24,8 +43,6 @@ export default function App() {
   const handleSetSelectTab = (item, index) => {
     setSelectedTab(item);
     setIcon(index + 1);
-    console.log(data);
-    console.log(index);
   };
 
   // const handleClick = () => {
@@ -35,6 +52,29 @@ export default function App() {
   // const handleData = () => {
   //   console.log(data);
   // };
+
+  const iconMapping = {
+    faFacebook,
+    faTwitter,
+    faInstagram,
+    faLinkedIn,
+    faSnapchat,
+    faPinterest,
+    faTumblr,
+    faReddit,
+    faVimeo,
+    faFlickr,
+    faGooglePlus,
+    faSkype,
+    faTelegram,
+    faSlack,
+    faDiscord,
+    faTwitch,
+    faSoundCloud,
+    faSpotify,
+  };
+
+  console.log(tabs.length);
 
   return (
     <div className="window">
@@ -47,7 +87,17 @@ export default function App() {
               className={item === selectedTab ? "selected" : ""}
               onClick={() => handleSetSelectTab(item, index)}
             >
-              {`${item.icon} ${item.label}`}
+              {/* {`${item.icon} ${item.label}`} */}
+
+              <FontAwesomeIcon
+                icon={iconMapping[item.icon]}
+                style={{
+                  color: "green",
+                  fontSize: "23px",
+                  fontWeight: "bold",
+                }}
+              />
+
               {item === selectedTab ? (
                 <motion.div className="underline" layoutId="underline" />
               ) : null}
@@ -64,25 +114,18 @@ export default function App() {
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {/* {data.item ? data.item : "😋"} */}
-            <FontAwesomeIcon
-              icon={faCoffee}
-              style={{
-                color: "lightgreen",
-                fontSize: "23px",
-                fontWeight: "bold",
-              }}
-            />
-            <label
-              style={{
-                fontSize: "20px",
-                marginLeft: "5px",
-                cursor: "pointer",
-                color: "lightgreen",
-              }}
-            >
-              WhatsApp
-            </label>
+            {data.item ? (
+              <FontAwesomeIcon
+                icon={iconMapping[data.item]}
+                style={{
+                  color: "pink",
+                  fontSize: "200px",
+                  fontWeight: "bold",
+                }}
+              />
+            ) : (
+              "😋"
+            )}
           </motion.div>
         </AnimatePresence>
       </main>
