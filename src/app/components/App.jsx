@@ -45,13 +45,7 @@ export default function App() {
     setIcon(index + 1);
   };
 
-  // const handleClick = () => {
-  //   dispatch(getIcon({ iconId }));
-  // };
 
-  // const handleData = () => {
-  //   console.log(data);
-  // };
 
   const iconMapping = {
     faFacebook,
@@ -109,7 +103,7 @@ export default function App() {
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedTab ? selectedTab.label : "empty"}
-            initial={{ y: 10, opacity: 0 }}
+            initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.2 }}
@@ -129,7 +123,7 @@ export default function App() {
           </motion.div>
         </AnimatePresence>
       </main>
-      {/* <button onClick={handleData}>Don't Click</button> */}
+  
     </div>
   );
 }

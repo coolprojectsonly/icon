@@ -2,7 +2,6 @@ const userData = [
   { id: "1", icon: "faFacebook" },
   { id: "2", icon: "faTwitter" },
   { id: "3", icon: "faInstagram" },
-
   { id: "4", icon: "faSnapchat" },
   { id: "5", icon: "faPinterest" },
   { id: "6", icon: "faTumblr" },
@@ -15,7 +14,6 @@ const userData = [
   { id: "13", icon: "faSlack" },
   { id: "14", icon: "faDiscord" },
   { id: "15", icon: "faTwitch" },
-
   { id: "16", icon: "faSpotify" },
 ];
 
